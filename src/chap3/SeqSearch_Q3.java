@@ -25,7 +25,7 @@ public class SeqSearch_Q3 {
         System.out.print("요소수: ");
         int num = stdIn.nextInt();
         int[] x = new int[num];                 // 요소수가 num인 배열
-        int[] y = new int[num];
+        int[] y = new int[num];                 // 일치하는 요소수를 담을 배열
 
         for (int i = 0; i < num; i++) {
             System.out.print("x[" + i + "]: ");

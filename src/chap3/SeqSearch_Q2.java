@@ -5,7 +5,7 @@ import java.util.Scanner;
 // 선형 검색
 public class SeqSearch_Q2 {
 
-    // 요솟수가 n인 배열 a에서 key와 같은 요소를 선형 검색합니다.
+    // 요소수가 n인 배열 a에서 key와 같은 요소를 선형 검색합니다.
     static int seqSearch(int[] a, int n, int key) {
         System.out.print("  |");
         for (int i = 0; i < a.length; i++) {
@@ -39,9 +39,9 @@ public class SeqSearch_Q2 {
     public static void main(String[] args) {
         Scanner stdIn = new Scanner(System.in);
 
-        System.out.print("요솟수: ");
+        System.out.print("요소수: ");
         int num = stdIn.nextInt();
-        int[] x = new int[num];                 // 요솟수가 num인 배열
+        int[] x = new int[num];                 // 요소수가 num인 배열
 
         for (int i = 0; i < num; i++) {
             System.out.print("x[" + i + "]: ");

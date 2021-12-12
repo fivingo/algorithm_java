@@ -5,7 +5,7 @@ import java.util.Scanner;
 // 이진 검색
 public class BinSearch {
 
-    // 요솟수가 n인 배열 a에서 key와 같은 요소를 이진 검색합니다.
+    // 요소수가 n인 배열 a에서 key와 같은 요소를 이진 검색합니다.
     static int binSearch(int[] a, int n, int key) {
         int pl = 0;                     // 검색 범위의 첫 인덱스
         int pr = n - 1;                 // 검색 범위의 끝 인덱스
@@ -27,9 +27,9 @@ public class BinSearch {
     public static void main(String[] args) {
         Scanner stdIn = new Scanner(System.in);
 
-        System.out.print("요솟수: ");
+        System.out.print("요소수: ");
         int num = stdIn.nextInt();
-        int[] x = new int[num];         // 요솟수가 num인 배열
+        int[] x = new int[num];         // 요소수가 num인 배열
 
         System.out.println("오름차순으로 입력하세요.");
 

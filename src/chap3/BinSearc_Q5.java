@@ -32,27 +32,24 @@ public class BinSearc_Q5 {
     public static void main(String[] args) {
         Scanner stdIn = new Scanner(System.in);
 
-        int num = 11;
-        int[] x = {1, 3, 7, 7, 7, 7, 7, 8, 8, 9, 9};
-        int ky = 7;
-//        System.out.print("요소수: ");
-//        int num = stdIn.nextInt();
-//        int[] x = new int[num];         // 요소수가 num인 배열
-//
-//        System.out.println("오름차순으로 입력하세요.");
-//
-//        System.out.print("x[0]: ");     // 첫 요소 입력
-//        x[0] = stdIn.nextInt();
-//
-//        for (int i = 1; i < num; i++) {
-//            do {
-//                System.out.print("x[" + i + "]: ");
-//                x[i] = stdIn.nextInt();
-//            } while (x[i] < x[i - 1]);      // 바로 앞의 요소보다 작으면 다시 입력
-//        }
-//
-//        System.out.print("검색할 값: ");     // 키 값을 입력
-//        int ky = stdIn.nextInt();
+        System.out.print("요소수: ");
+        int num = stdIn.nextInt();
+        int[] x = new int[num];         // 요소수가 num인 배열
+
+        System.out.println("오름차순으로 입력하세요.");
+
+        System.out.print("x[0]: ");     // 첫 요소 입력
+        x[0] = stdIn.nextInt();
+
+        for (int i = 1; i < num; i++) {
+            do {
+                System.out.print("x[" + i + "]: ");
+                x[i] = stdIn.nextInt();
+            } while (x[i] < x[i - 1]);      // 바로 앞의 요소보다 작으면 다시 입력
+        }
+
+        System.out.print("검색할 값: ");     // 키 값을 입력
+        int ky = stdIn.nextInt();
 
         int idx = binSearchX(x, num, ky);    // 배열 x에서 키 값이 ky인 요소를 검색
 

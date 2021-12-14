@@ -8,12 +8,12 @@ public class IntStack_Q2<E> {
 
     // 실행 시 예외: 스택이 비어있음
     public static class EmptyIntStackException extends RuntimeException {
-        public EmptyIntStackException() { }
+        public EmptyIntStackException() {}
     }
 
     // 실행 시 예외: 스택이 가득 참
     public static class OverflowIntStackException extends RuntimeException {
-        public OverflowIntStackException() { }
+        public OverflowIntStackException() {}
     }
 
     // 생성자
@@ -27,7 +27,7 @@ public class IntStack_Q2<E> {
         }
     }
 
-    // 스택에 x를 푸시
+    // 스택에 데이터를 푸시
     public E push(E x) throws OverflowIntStackException {
         if (ptr >= max) {               // 스택이 가득 참
             throw new OverflowIntStackException();

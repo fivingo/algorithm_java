@@ -8,18 +8,19 @@ public class IntStack {
 
     // 실행 시 예외: 스택이 비어있음
     public class EmptyIntStackException extends RuntimeException {
-        public EmptyIntStackException() { }
+        public EmptyIntStackException() {}
     }
 
     // 실행 시 예외: 스택이 가득 참
     public class OverflowIntStackException extends RuntimeException {
-        public OverflowIntStackException() { }
+        public OverflowIntStackException() {}
     }
 
     // 생성자
     public IntStack(int capacity) {
         ptr = 0;
         max = capacity;
+
         try {
             stk = new int[max];         // 스택 본체용 배열을 생성
         } catch (OutOfMemoryError e) {  // 생성할 수 없음
@@ -27,7 +28,7 @@ public class IntStack {
         }
     }
 
-    // 스택에 x를 푸시
+    // 스택에 데이터를 푸시
     public int push(int x) throws OverflowIntStackException {
         if (ptr >= max) {               // 스택이 가득 참
             throw new OverflowIntStackException();

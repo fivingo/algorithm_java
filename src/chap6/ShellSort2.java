@@ -2,12 +2,18 @@ package chap6;
 
 import java.util.Scanner;
 
-// 셸 정렬 (버전1)
-public class ShellSort {
+// 셸 정렬 (버전2, h의 값은 ..., 40, 13, 4, 1)
+public class ShellSort2 {
 
     // 셸 정렬
     static void shellSort(int[] a, int n) {
-        for (int h = n / 2; h > 0; h /= 2) {
+        int h;
+
+        for (h = 1; h < n / 9; h = h * 3 + 1) {     // h의 초기값 구함
+            ;
+        }
+
+        for (; h > 0; h /= 3) {
             for (int i = h; i < n; i++) {
                 int j;
                 int tmp = a[i];
@@ -24,7 +30,7 @@ public class ShellSort {
     public static void main(String[] args) {
         Scanner stdIn = new Scanner(System.in);
 
-        System.out.println("셸 정렬 (버전1)");
+        System.out.println("셸 정렬 (버전2)");
         System.out.print("요소수: ");
         int nx = stdIn.nextInt();
         int[] x = new int[nx];

@@ -65,7 +65,7 @@ public class LinkedList<E> {
 
     // 머리 노드를 삭제
     public void removeFirst() {
-        if (head != null) {                         // 리스탁 비어 있지 않으면
+        if (head != null) {                         // 리스트가 비어 있지 않으면
             head = crnt = head.next;
         }
     }

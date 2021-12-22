@@ -41,6 +41,7 @@ class BFmatch_Q2 {
         if (idx == -1) {
             System.out.println("텍스트에 패턴이 없습니다.");
         } else {
+
             // 일치하는 문자 바로 앞까지의 길이를 구합니다.
             int len = 0;
 

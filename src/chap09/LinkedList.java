@@ -1,9 +1,9 @@
-package chap9;
+package chap09;
 
 import java.util.Comparator;
 
 // 연결 리스트 클래스
-public class LinkedListT<E> {
+public class LinkedList<E> {
 
     // 노드
     class Node<E> {
@@ -18,12 +18,11 @@ public class LinkedListT<E> {
     }
 
     private Node<E> head;       // 머리 노드
-    private Node<E> tail;       // 꼬리 노드
     private Node<E> crnt;       // 선택 노드
 
     // 생성자
-    public LinkedListT() {
-        head = tail = crnt = null;
+    public LinkedList() {
+        head = crnt = null;
     }
 
     // 노드 검색
@@ -45,14 +44,8 @@ public class LinkedListT<E> {
 
     // 머리에 노드 삽입
     public void addFirst(E obj) {
-        boolean empty = (tail == null);
         Node<E> ptr = head;                         // 삽입 전의 머리 노드
-
         head = crnt = new Node<>(obj, ptr);
-
-        if (empty) {
-            tail = crnt;
-        }
     }
 
     // 꼬리에 노드 삽입
@@ -60,19 +53,20 @@ public class LinkedListT<E> {
         if (head == null) {                         // 리스트가 비어 있으면
             addFirst(obj);                          // 머리에 삽입
         } else {
-            tail.next = crnt = new Node<>(obj, null);
-            tail = crnt;
+            Node<E> ptr = head;
+
+            while (ptr.next != null) {
+                ptr = ptr.next;
+            }
+
+            ptr.next = crnt = new Node<>(obj, null);
         }
     }
 
     // 머리 노드를 삭제
     public void removeFirst() {
-        if (head != null) {                         // 리스탁 비어 있지 않으면
+        if (head != null) {                         // 리스트가 비어 있지 않으면
             head = crnt = head.next;
-
-            if (head == null) {
-                tail = null;
-            }
         }
     }
 
@@ -91,7 +85,7 @@ public class LinkedListT<E> {
                 }
 
                 pre.next = null;                    // pre는 삭제 후의 꼬리 노드
-                tail = crnt = pre;
+                crnt = pre;
             }
         }
     }
@@ -101,8 +95,6 @@ public class LinkedListT<E> {
         if (head != null) {
             if (p == head) {                        // p가 머리 노드면
                 removeFirst();                      // 머리 노드를 삭제
-            } else if (p == tail) {                 // p가 꼬리 노드면
-                removeLast();                       // 꼬리 노드를 삭제
             } else {
                 Node<E> ptr = head;
 

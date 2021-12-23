@@ -1,10 +1,10 @@
-package chap9;
+package chap09;
 
 import java.util.Comparator;
 import java.util.Scanner;
 
-// 연결 리스트 클래스 AryLinkedList<E>의 사용예
-public class AryLinkedListTester {
+// 연결 리스트 클래스 LinkedList<E>의 사용예
+public class LinkedListTester {
     static Scanner stdIn = new Scanner(System.in);
 
     // 데이터 (회원번호 + 이름)
@@ -118,7 +118,7 @@ public class AryLinkedListTester {
         Data ptr;                           // 검색용 데이터 참조
         Data temp = new Data();             // 입력용 데이터
 
-        AryLinkedList<Data> list = new AryLinkedList<>(100);     // 리스트를 생성
+        LinkedList<Data> list = new LinkedList<>();     // 리스트를 생성
 
         do {
             switch (menu = SelectMenu()) {

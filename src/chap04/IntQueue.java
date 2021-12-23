@@ -1,7 +1,7 @@
-package chap4;
+package chap04;
 
 // int형 큐
-public class IntQueue_Q5 {
+public class IntQueue {
     private int max;            // 큐의 용량
     private int front;          // 첫 번째 요소 커서
     private int rear;           // 마지막 요소 커서
@@ -19,7 +19,7 @@ public class IntQueue_Q5 {
     }
 
     // 생성자
-    public IntQueue_Q5(int capacity) {
+    public IntQueue(int capacity) {
         num = front = rear = 0;
         max = capacity;
 
@@ -82,17 +82,6 @@ public class IntQueue_Q5 {
         }
         
         return -1;                                  // 검색 실패
-    }
-
-    // 큐에서 x를 검색하여 몇 번째인지(찾지 못하면 0) 양수로 반환
-    public int search(int x) {
-        for (int i = 0; i < num; i++) {
-            if (que[(i + front) % max] == x) {                    // 검색 성공
-                return i + 1;
-            }
-        }
-
-        return 0;                                  // 검색 실패
     }
 
     // 큐를 비움

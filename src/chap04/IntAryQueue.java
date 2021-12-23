@@ -1,4 +1,4 @@
-package chap4;
+package chap04;
 
 // int형 큐
 public class IntAryQueue {

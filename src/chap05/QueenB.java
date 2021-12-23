@@ -1,4 +1,4 @@
-package chap5;
+package chap05;
 
 // 각 열에 1개의 퀸을 배치하는 조합을 재귀적으로 나열합니다.
 public class QueenB {

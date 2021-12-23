@@ -1,19 +1,17 @@
-package chap5;
+package chap05;
 
 import java.util.Scanner;
 
-// 팩토리얼을 비재귀적으로 구현
-public class Factorial_Q1 {
+// 팩토리얼을 재귀적으로 구현
+public class Factorial {
 
     // 양의 정수 n의 팩토리얼을 반환합니다.
     static int factorial(int n) {
-        int fact = n;
-
-        while (n > 1) {
-            fact *= n--;
+        if (n > 0) {
+            return n * factorial(n - 1);
+        } else {
+            return 1;
         }
-
-        return fact;
     }
 
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package chap5;
+package chap05;
 
 // int형 스택
 public class IntStack {

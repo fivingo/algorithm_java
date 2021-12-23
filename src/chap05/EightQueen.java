@@ -1,19 +1,16 @@
-package chap5;
+package chap05;
 
 // 8 퀸 문제 풀이
-public class EightQueen_Q8 {
+public class EightQueen {
     static boolean[] flag_a = new boolean[8];   // 각 행에 퀸을 배치했는지 체크
     static boolean[] flag_b = new boolean[15];  // / 대각선 방향으로 퀸을 배치했는지 체크
     static boolean[] flag_c = new boolean[15];  // \ 대각선 방향으로 퀸을 배치했는지 체크
     static int[] pos = new int[8];              // 각 열의 퀸의 위치
 
-    // 각 열의 퀸의 위치를 체스판으로 출력
+    // 각 열의 퀸의 위치를 출력
     static void print()  {
         for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
-                System.out.printf("%2s", j == pos[i] ? "■" : "□");
-            }
-            System.out.println();
+            System.out.printf("%2d", pos[i]);
         }
         System.out.println();
     }

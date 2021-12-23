@@ -1,4 +1,4 @@
-package chap5;
+package chap05;
 
 // 8 퀸 문제 풀이
 public class EightQueen_Q9 {

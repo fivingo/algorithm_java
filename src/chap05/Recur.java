@@ -1,16 +1,16 @@
-package chap5;
+package chap05;
 
 import java.util.Scanner;
 
 // 재귀 함수 이해하기
-public class RecurX1 {
+public class Recur {
 
-    // 꼬리 재귀를 제거했습니다.
+    // 재귀 함수
     static void recur(int n) {
-        while (n > 0) {
+        if (n > 0) {
             recur(n - 1);
             System.out.println(n);
-            n = n - 2;
+            recur(n - 2);
         }
     }
 

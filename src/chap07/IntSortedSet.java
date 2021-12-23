@@ -1,4 +1,4 @@
-package chap7;
+package chap07;
 
 // int형 집합 (오름차순 정렬)
 public class IntSortedSet {

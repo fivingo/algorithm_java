@@ -1,4 +1,4 @@
-package chap7;
+package chap07;
 
 // int형 집합 클래스 IntSet을 사용하는 예
 public class IntSetTester {

@@ -1,4 +1,4 @@
-package chap3;
+package chap03;
 
 // 아이디를 부여하는 클래스
 class Id {

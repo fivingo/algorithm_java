@@ -1,7 +1,6 @@
-package chap3;
+package chap03;
 
 import java.util.Arrays;
-import java.util.Scanner;
 
 // Arrays.binarySearch로 이진 검색
 public class BinarySearchTester_Q6 {

@@ -1,22 +1,22 @@
-package chap8;
+package chap08;
 
 import java.util.Scanner;
 
 // 브루트-포스법으로 문자열을 검색하는 프로그램
-class BFmatch_Q2 {
+class BFmatch {
 
-    // 브루트-포스법으로 문자열을 뒤쪽부터 검색하는 메서드
-    static int bfMatchLast(String txt, String pat) {
-        int pt = txt.length() - 1;      // txt 커서
-        int pp = pat.length() - 1;      // pat 커서
+    // 브루트-포스법으로 문자열을 검색하는 메서드
+    static int bfMatch(String txt, String pat) {
+        int pt = 0;                         // txt 커서
+        int pp = 0;                         // pat 커서
 
-        while (pt >= 0 && pp >= 0) {
+        while (pt != txt.length() && pp != pat.length()) {
             if (txt.charAt(pt) == pat.charAt(pp)) {
-                pt--;
-                pp--;
+                pt++;
+                pp++;
             } else {
-                pt = pt + (pat.length() - pp) - 2;
-                pp = pat.length() - 1;
+                pt = pt - pp + 1;
+                pp = 0;
             }
         }
 
@@ -36,12 +36,11 @@ class BFmatch_Q2 {
         System.out.print("패턴: ");
         String s2 = stdIn.next();           // 패턴용 문자열
 
-        int idx = bfMatchLast(s1, s2);          // 문자열 s1에서 문자열 s2를 검색
+        int idx = bfMatch(s1, s2);          // 문자열 s1에서 문자열 s2를 검색
 
         if (idx == -1) {
             System.out.println("텍스트에 패턴이 없습니다.");
         } else {
-
             // 일치하는 문자 바로 앞까지의 길이를 구합니다.
             int len = 0;
 

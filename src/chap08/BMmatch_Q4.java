@@ -1,8 +1,8 @@
-package chap8;
+package chap08;
 
 import java.util.Scanner;
 
-class BMmatch {
+class BMmatch_Q4 {
 
     // Boyer-Moore법으로 문자열을 검색
     static int bmMatch(String txt, String pat) {
@@ -11,6 +11,8 @@ class BMmatch {
         int txtLen = txt.length();      // txt의 문자 개수
         int patLen = pat.length();      // pat의 문자 개수
         int[] skip = new int[Character.MAX_VALUE + 1];  // 건너뛰기 표
+        int count = 0;
+        int k = -1;
 
         // 건너뛰기 표 만들기
         for (pt = 0; pt <= Character.MAX_VALUE; pt++) {
@@ -25,6 +27,36 @@ class BMmatch {
         while (pt < txtLen) {
             pp = patLen - 1;            // pat의 끝 문자에 주목
 
+            if (k == pt - pp) {
+                System.out.print("    ");
+            } else {
+                System.out.printf("%2d  ", pt - pp);
+                k = pt - pp;
+            }
+
+            for (int i = 0; i < txt.length(); i++) {
+                System.out.print(txt.charAt(i) + " ");
+            }
+            System.out.println();
+
+            for (int i = 0; i < pt * 2 + 4; i++) {
+                System.out.print(" ");
+            }
+            System.out.print(txt.charAt(pt) == pat.charAt(pp) ? '+' : '|');
+            System.out.println();
+
+            for (int i = 0; i < (pt - pp) * 2 + 4; i++) {
+                System.out.print(" ");
+            }
+
+            for (int i = 0; i < pat.length(); i++) {
+                System.out.print(pat.charAt(i) + " ");
+            }
+            System.out.println();
+            System.out.println();
+
+            count++;
+
             while (txt.charAt(pt) == pat.charAt(pp)) {
                 if (pp == 0) {
                     return pt;          // 검색 성공
@@ -32,9 +64,39 @@ class BMmatch {
 
                 pp--;
                 pt--;
+
+                if (k == pt - pp) {
+                    System.out.print("    ");
+                } else {
+                    System.out.printf("%2d  ", pt - pp);
+                    k = pt - pp;
+                }
+
+                for (int i = 0; i < txt.length(); i++) {
+                    System.out.print(txt.charAt(i) + " ");
+                }
+                System.out.println();
+
+                for (int i = 0; i < pt * 2 + 4; i++) {
+                    System.out.print(" ");
+                }
+                System.out.print(txt.charAt(pt) == pat.charAt(pp) ? '+' : '|');
+                System.out.println();
+
+                for (int i = 0; i < (pt - pp) * 2 + 4; i++) {
+                    System.out.print(" ");
+                }
+
+                for (int i = 0; i < pat.length(); i++) {
+                    System.out.print(pat.charAt(i) + " ");
+                }
+                System.out.println();
+                System.out.println();
+
+                count++;
             }
 
-            pt += (skip[txt.charAt(pt)] > patLen - pp) ? skip[txt.charAt(pt)] : patLen - pp;
+            pt += skip[txt.charAt(pt)];
         }
 
         return -1;                      // 검색 실패

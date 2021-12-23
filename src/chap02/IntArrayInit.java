@@ -1,4 +1,4 @@
-package chap2;
+package chap02;
 
 // 구성 자료형이 int형인 배열 (구성 요솟수는 5: 배열 초기자에 의해 생성)
 public class IntArrayInit {

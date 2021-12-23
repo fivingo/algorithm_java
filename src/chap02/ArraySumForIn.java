@@ -1,4 +1,4 @@
-package chap2;
+package chap02;
 
 // 배열의 모든 요소의 합을 구하여 출력함 (확장 for문)
 public class ArraySumForIn {

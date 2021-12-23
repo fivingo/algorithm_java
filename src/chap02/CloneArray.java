@@ -1,4 +1,4 @@
-package chap2;
+package chap02;
 
 // 배열을 복제합니다.
 public class CloneArray {

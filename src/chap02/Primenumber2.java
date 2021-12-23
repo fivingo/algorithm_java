@@ -1,4 +1,4 @@
-package chap2;
+package chap02;
 
 // 1,000 이하의 소수를 열거 (버전2)
 public class Primenumber2 {

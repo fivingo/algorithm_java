@@ -1,4 +1,4 @@
-package chap2;
+package chap02;
 
 public class PhysicalExample_Q11 {
     static class YMD {
